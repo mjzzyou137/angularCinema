@@ -1,30 +1,48 @@
-<div class="modal-content"> 
-        <div class="containerLogin">
-            <div class="sign">
-                <p>Sign up</p>
-                <form #formDangNhap="ngForm" >
-                    <input type="text" class="signup" placeholder="Username"  name="TaiKhoan" ngModel> 
-        
-                    <input type="password" class="signup" placeholder="Password" name="Password" ngModel> 
-        
-                </form>
-                <button  data-dismiss="modal" type="submit" class="btn buttonSign" (click)="DangNhap(formDangNhap.value)">SIGN UP</button>
-            </div>
-            <div class="login">
-                <h1>Sign in with social network</h1>
-                <div class="social"> 
-                    <a  data-dismiss="modal" (click)="signInWithFB()" class="loginFacebook">Login in with Facebook</a>
-                    <a  data-dismiss="modal" href="#" class="loginTwitter">Login in with Twitter</a>
-                    <a  data-dismiss="modal" href="#" class="loginGoogle">Login in with Google</a>
-                    <span *ngIf="user"> {{ user.name }}</span>
+<div class="modal-content">
+    <div class="containerLogin">
+        <div class="sign">
+            <p>Sign up</p>
+            <form #formDangNhap="ngForm">
+                <input type="text" class="signup" placeholder="Username" name="TaiKhoan" ngModel #taikhoan='ngModel'
+                    minlength="5" maxlength="15">
+                <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
+                    <div  style="  margin-left: 30px; margin-bottom: 15px;" *ngIf="taikhoan.errors.required" class="text-danger font-weight-bold">
+                        Chưa nhập tài khoản
+                    </div>
+                    <!-- Kiểm tra minlength max length -->
+                    <div class="text-danger font-weight-bold"
+                        *ngIf="taikhoan.errors.minlength || taikhoan.errors.maxlength">
+                        Tài khoản phải từ 5 - 15 kí tự
+                    </div>
                 </div>
+                <input type="password" class="signup" placeholder="Password" name="Password" ngModel required  required #matkhau='ngModel' ngModel name="Password">
+                <div style="  margin-left: 30px; margin-bottom: 15px;" *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)">
+                    <!-- Kiêm tra rỗng -->
+                    <div *ngIf="matkhau.errors.required" class="text-danger font-weight-bold">
+                        Vui lòng nhập mật khẩu
+                    </div>
+                    <!-- Kiểm tra minlength max length -->
+                    <div class="text-danger font-weight-bold"
+                        *ngIf="matkhau.errors.minlength || matkhau.errors.maxlength">
+                        Mật khẩu phải từ 10 - 20 kí tự
+                    </div>
+                </div>
+            </form>
+            <button data-dismiss="modal" type="submit" class="btn buttonSign"
+                (click)="DangNhap(formDangNhap.value)">SIGN UP</button>
+        </div>
+        <div class="login">
+            <h1>Sign in with social network</h1>
+            <div class="social">
+                <a data-dismiss="modal" (click)="signInWithFB()" class="loginFacebook">Login in with Facebook</a>
+                <a data-dismiss="modal" href="#" class="loginTwitter">Login in with Twitter</a>
+                <a data-dismiss="modal" href="#" class="loginGoogle">Login in with Google</a>
+                <span *ngIf="user"> {{ user.name }}</span>
             </div>
         </div>
-         
+    </div>
+
 </div>
-
- 
-
 
 
 
