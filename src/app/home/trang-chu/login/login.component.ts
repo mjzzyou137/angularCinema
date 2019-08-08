@@ -74,13 +74,14 @@ export class LoginComponent implements OnInit {
       }
       const ng = {
         TaiKhoan: user.name,
-        MatKhau: user.photoUrl,
+        MatKhau: user.name,
         Email: user.email,
-        SoDT: null,
+        // SoDT: null,
         HoTen:user.name,
         MaNhom: "GP09",
         MaLoaiNguoiDung: "KhachHang"
       } 
+      console.log(ng)
       setTimeout(() => {
         const ui: string = "QuanLyNguoiDung/ThemNguoiDung"
         this.dataService.post(ui, ng).subscribe((data) => { 
