@@ -1,0 +1,114 @@
+<app-header></app-header> 
+<app-slider></app-slider>
+<div class="scroll">
+  <img  style="width: 100%; height: 50px;" src="../../../assets/image/loaiPhim/scroll-down.png" alt="">
+</div> 
+<div class="bgDatVe">
+  <div class="container">
+      <ng-container>
+          <div class="setting" [ngClass]="{'rightToLeft':trangThaiDatGhe,'none':trangthainone}">
+            <div class="containerSetting">
+              <button class="btn close" (click)="Close()">x</button>
+              <div class="thongTinPhim">
+                <h4>PHIM ĐÃ CHỌN </h4>
+                <ul>
+                  <li>
+                    <span class="listThongTin">Tên phim</span>
+                    <span *ngIf="chiTietPhim">{{ chiTietPhim.TenPhim }}</span>
+                  </li>
+                  <li>
+                    <span class="listThongTin">Rạp</span>
+                    <span *ngIf="tenRap">{{ tenRap.TenRap }}</span>
+                  </li>
+                  <li>
+                    <span class="listThongTin"> Ngày chiếu</span>
+                    <span>{{ ngayChieuGioChieu | date: "dd-MM-yyyy"}} </span>
+                  </li>
+                  <li>
+                    <span class="listThongTin">Suất chiếu</span>
+                    <span>{{ ngayChieuGioChieu | date: "hh:mm" }} </span>
+                  </li>
+                  <li>
+                    <span class="listThongTin">Số ghế</span>
+                    <span>
+                      <span class="soGhe"  *ngFor="let item of soGheDangChon"> {{ item.stt}}
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="listThongTin">Thời lượng</span>
+                    <span>{{ thoiLuong }} phút</span>
+                  </li>
+                  <li>
+                    <span class="listThongTin">Giá vé</span>
+                    <span>{{ giaVe }}.000đ</span>
+                  </li>
+                </ul>
+                <h5 class="doAnThem" style="cursor: pointer"  data-toggle="modal" data-target="#myModal" (click)="ClickDoAnThem()">ĐỒ ĂN THÊM</h5>
+                <ul class="ulDoAnThem">
+                  <li>
+                    <span class="listThongTin"  *ngIf ="TrangThaiDoAn">Giá đồ ăn thêm</span>
+                    <span *ngIf ="TrangThaiDoAn">{{ TongTienDoAnThem }}.000đ</span>
+                  </li>
+                </ul>
+                <div class="line"></div>
+                <div class="line"></div>
+                <h5 class="tongTien">TỔNG TIỀN : {{ TongTien }}.000đ</h5> 
+                <div class="containerThanhToan">
+                  <button class="thanhToan"(click)="CloseThanhToan()">THANH TOÁN  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+    <div class="listGhe">
+      <div class="containerRow">
+        <div class="itemListGhe" *ngFor="let item of CacLoaiGhe">
+          <div class="img">
+            <img [src]="item.ImgSrc" alt="" [ngStyle]="{'margin-top':item.MarginTop}">
+          </div>
+          <span>{{ item.LoaiGhe }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="manHinh"></div>
+    <div class="containerGhe">
+      <ng-container *ngIf="danhSachGhe">
+        <app-ghe *ngFor="let item of danhSachGhe.DanhSachGhe"  [ItemGhe]="item" (eventDatGhe)="ChonGhe($event)"
+        class="ghe" (click)="ClickGhe(item)" (eventDatVe)="DatVe($event)"  (click)="HuyDanhSachChon()"></app-ghe>
+      </ng-container>
+    </div>
+    <div class="intro">
+      <div class="gheConTrong">
+        Số ghế còn trống : &nbsp;<span class="conTrong">{{ soGheConTrong }}</span>
+      </div>
+      <div class="gheDaDat">
+        Số ghế đã đặt : &nbsp;&nbsp;<span class="daDat">{{ soGheDaDat }}</span>
+      </div>
+      <div class="gheDangChon">
+        Số ghế đang chọn :&nbsp;&nbsp; <span class="dangChon" *ngIf="soGheDaDat == 0; else DaChon">CHƯA CHỌN</span>
+      </div>
+      <div class="countDown">
+          <countdown [config]="{leftTime: 120, notify: [ 60 , 1 ]}" (notify)="onNotify($event)">$!m!:$!s!</countdown>
+      </div>
+    </div>
+    <div class="containerBtn">
+      <button class="btn btnQuayLai btnChung" (click)="QuayLai()">QUAY LẠI</button>
+      <button class="btn btnDatGhe btnChung" (click)="DatGhe()">ĐẶT GHẾ</button>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ngTemplate -->
+<ng-template #DaChon>
+  <span class="dangChon" *ngFor="let item of soGheDangChon">{{ item.stt }}</span>
+</ng-template>
+
+<!-- MODAL ĐỒ ĂN THÊM-->
+<div class="modal" id="myModal">
+  <app-dat-do-an (eventChonDoAn)="ChapNhanDoAn($event)"></app-dat-do-an>
+
+</div>
+<app-footer></app-footer>

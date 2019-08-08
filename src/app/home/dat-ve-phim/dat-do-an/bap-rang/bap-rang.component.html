@@ -1,0 +1,17 @@
+<div>
+  <h2 class="text">{{ DoAn.Ten }}</h2>
+  <h5 class="text">{{ DoAn.GioiThieu }}</h5>
+  <h3 class="text">GIÁ : {{ DoAn.GiaKhongSuaDuoc }}đ</h3>
+</div>
+<div class="containerControl">
+  <div class="top">
+    <button class="circle tru" (click)="XoaSanPham(DoAn.Ma)" [disabled]="TrangThaiDisabled"><h1>-</h1></button>
+    <div class="soLuong">
+      {{ DoAn.SoLuong }}
+    </div> 
+    <button class="circle cong" (click)="ThemSanPham(DoAn.Ma)"><h1>+</h1></button>
+  </div>
+  <div class="bottom"> 
+    <h1 class="gia" *ngIf="trangthai">{{ DoAn.Gia }}.000đ</h1>
+  </div>
+</div>

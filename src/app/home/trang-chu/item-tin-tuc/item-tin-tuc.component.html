@@ -1,0 +1,9 @@
+<div class="itemTinTuc" (click)="ChonTinTuc(ItemTinTuc.id)"> 
+    <div class="text">
+        <h3 class="title">{{ ItemTinTuc.title }}</h3>
+        <p class="content">{{ ItemTinTuc.content }}</p>
+    </div>
+    <div class="img" [class]="ItemTinTuc.status === true ? 'borderOne':'borderTwo'">
+        <img [src]="ItemTinTuc.img" alt="">
+    </div>
+</div>

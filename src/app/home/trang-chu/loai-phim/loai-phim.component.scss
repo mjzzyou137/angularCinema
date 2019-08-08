@@ -1,0 +1,23 @@
+.loaiPhim{
+    padding: 30px 0;
+    .row{
+        margin-right: 0;
+        margin-left: 0;
+        .col-md-12{
+            transition: all .5s;
+        }
+        .loaiPhimChung{
+            .phimChung{
+                display:inline-block;
+                color: white;
+                font-weight: bold;
+                margin-right: 30px;
+                cursor: pointer;
+            }
+            .phimChungTrangThai{
+                border-bottom: 2px solid #BEC62B;
+                color: #BEC62B;
+            }
+        }
+    }
+}

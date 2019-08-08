@@ -1,0 +1,38 @@
+<div class="containerImg">
+    <img [src]="ItemLoaiPhim.HinhAnh" alt="" class="w-100 h-100" >
+    <div class="overlay"></div>
+    <div class="text">
+        <h5>{{ItemLoaiPhim.TenPhim}}</h5> 
+        <div class="danhGia" [ngSwitch]="ItemLoaiPhim.DanhGia">
+            <div *ngSwitchCase="1">
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'2'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'3'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'4'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'5'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <button class="btn trailer"><a class="video"
+            href="{{ ItemLoaiPhim.Trailer }}">TRAILER</a></button>
+        <br>
+        <button class="btn chiTiet" (click)="ChonPhim(ItemLoaiPhim.MaPhim)">CHI TIẾT</button>
+    </div>
+</div>

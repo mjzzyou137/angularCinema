@@ -1,0 +1,81 @@
+<div class="bgUser">
+    <header>
+        <app-header></app-header>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="top">
+                    <p *ngIf="user">{{user.TaiKhoan}}</p>
+                    <div class="avatar">
+                        <img *ngIf="userFb;else User" src="{{ userFb.SoDT }}" alt="">
+                        <ng-template #User>
+                            <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png" alt="">
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <span (click)="ThongTin()" [ngClass]="{dkSwitch:statusThongTin}">Thông tin</span>
+                    <span (click)="BaoMat()" [ngClass]="{dkSwitch:statusBaoMat}">Bảo mật</span>
+                    <span (click)="LichSuDatVe()">Lịch sử đặt vé</span>
+                    <span (click)="Thoat()">Thoát</span>
+                </div>
+            </div>
+            <div class="col-md-8" [ngSwitch]="dkSwitch">
+                <h1 *ngSwitchCase="1">WELCOME TO PASSION CINEMA</h1>
+                <ng-container *ngIf="user">
+                        <form #formChinhSua="ngForm" *ngSwitchCase="2">
+                                <h2 style="color: white;text-align:center">CẬP NHẬT NGƯỜI DÙNG </h2>
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Tài khoản" [ngModel]="user.TaiKhoan" name="TaiKhoan"
+                                        [disabled]="true">
+                                </mat-form-field>
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Email" ngModel ngModelname="Email">
+                                </mat-form-field>
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Họ tên" ngModel ngModel name="HoTen">
+                                </mat-form-field>
+        
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Số điện thoại" ngModel ngModel
+                                        name="SoDienThoai">
+                                </mat-form-field>
+        
+                                <p style="padding: 10px 20px;margin-top: 10px;background:#379070;text-align: center;color: white;font-weight: bold "
+                                    class="btn themPhim" (click)="ChinhSua(formChinhSua.value)">CHẤP NHẬN</p>
+                            </form>
+                </ng-container>
+                <ng-container *ngIf="user">
+                        <form #formChinhSua="ngForm" *ngSwitchCase="3">
+                                <h2 style="color: white;text-align:center">ĐỔI MẬT KHẨU</h2> 
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Mật khậu cũ" ngModel  name="MatKhauCu" #matkhau='ngModel'>
+                                </mat-form-field>
+                                <div *ngIf="matkhau.errors || matkhau.value == user.MatKhau || (matkhau.dirty || matkhau.touched)" style="color: red; font-weight:bold">
+                                    <div *ngIf="matkhau.value != user.MatKhau" >
+                                        Vui lòng nhập đúng mật khẩu cũ
+                                    </div>
+                                </div>
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Mật khẩu mới" ngModel  name="MatKhau" #pass>
+                                </mat-form-field>
+                                <mat-form-field class="example-full-width w-100 text-light">
+                                    <input matInput placeholder="Nhập lại mật khẩu cũ" ngModel  name="MatKhau" #repass='ngModel'>
+                                </mat-form-field>
+                                <div *ngIf="repass.errors || pass.value!= repass.value">
+                                    <div *ngIf="pass.value != repass.value  || (repass.dirty || repass.touched)" style="color: red; font-weight:bold">
+                                        Vui lòng nhập giống mật khẩu mới
+                                    </div>
+                                </div>
+        
+                                <p style="padding: 10px 20px;margin-top: 10px;background:#379070;text-align: center;color: white;font-weight: bold "
+                                    class="btn themPhim" (click)="ChinhSua(formChinhSua.value)">CHẤP NHẬN</p>
+                            </form>
+                </ng-container>
+            </div>
+ 
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

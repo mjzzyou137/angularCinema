@@ -1,0 +1,74 @@
+
+    <div class="input-group" style="background:#3F4980">
+            <input type="text" class="form-control" placeholder="Tìm kiếm phim" [(ngModel)]="term"
+                style="margin-bottom:20px">
+            <div class="input-group-prepend" style="margin-bottom:20px">
+                <span style="background: #379470;color:white !important" class="input-group-text" id="btnTimNV"><i
+                        class="fa fa-search text-white mb-0"></i></span>
+            </div>
+        </div>
+<ng-container *ngIf="danhSachPhim">
+    <div class="row mr-0 mr-0" *ngFor="let item of danhSachPhim | filter:term">
+        <div class=" col-md-3">
+        <img [src]="item.HinhAnh" alt="">
+    </div>
+    <div class="col-md-9">
+        <h3>{{ item.TenPhim }}</h3>
+        <p class="moTa mb-0">{{ item.MoTa }}</p>
+        <div class="danhGia" [ngSwitch]="item.DanhGia">
+            <div *ngSwitchCase="1">
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'2'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'3'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'4'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div *ngSwitchCase="'5'">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <p style="background:#379070;color: white;font-weight: bold " class="btn xoaPhim"
+            (click)="XoaPhim(item.MaPhim)">XÓA PHIM</p>
+        <br>
+        <!-- <app-sua-phim [maPhim]="item.MaPhim"></app-sua-phim> -->
+        <p data-toggle="modal" data-target="#modelId"
+            style="padding: 10px;background:#ED852F;color: white;font-weight: bold " class="btn suaPhim"
+            (click)="suaPhim(item)">CẬP NHẬT PHIM</p>
+
+        <!-- <span><i class="far fa-clock"></i>  Thời gian chiếu :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <button class="btn">10:10</button> -->
+    </div>
+    <!-- <div *ngIf="statusSuaPhim" class="col-md-3 suaPhim" style="background: #3F4980;border:none">
+            <form class="example-form suaPhimMain">
+                
+                      
+              </form>
+        </div> -->
+    </div>
+</ng-container>
+<div class="modalError">
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="containerCapNhat">
+                    <app-sua-phim [itemPhim]="itemPhim"></app-sua-phim>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

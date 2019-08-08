@@ -1,0 +1,24 @@
+<button class="btn mb-1" (click)="ChonNgayChieu(ItemLichChieu.MaPhim)"><i class="fas fa-calendar-day"></i>CHỌN NGÀY
+    CHIẾU</button>
+<br>
+<ng-container *ngIf="chiTietPhim">
+    <ng-container *ngIf="trangThaiChonNgay">
+        <div class="container ctn">
+            <mat-tab-group>
+                <mat-tab *ngFor="let item of chiTietPhim.LichChieu" [label]="item.NgayChieuGioChieu | date:'dd-MM-yyyy' ">
+                    <div class="suatChieu">
+                        <button class="btn">9:30</button>
+                        <button (click)="ChonSuatChieu(item.MaPhim,item.MaLichChieu)" class="btn">{{ item.NgayChieuGioChieu | date:'hh:mm' }}</button>
+                        <button class="btn">2:30</button>
+                        <button class="btn">17:50</button>
+                        <button class="btn">21:40</button>
+                        <button class="btn">23:00</button>
+                    </div>
+                </mat-tab>
+                <!-- <mat-tab label="Second"> Content 2 </mat-tab>
+            <mat-tab label="Third"> Content 3 </mat-tab> -->
+            </mat-tab-group>
+    
+        </div>
+    </ng-container>
+</ng-container>

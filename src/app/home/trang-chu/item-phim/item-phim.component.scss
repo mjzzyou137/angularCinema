@@ -1,0 +1,74 @@
+.containerImg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  img{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: -390%;
+    width: 300%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.747);
+    transform: skewX(45deg);
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+  &:hover .overlay {
+    left: -90%;
+  }
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    width: 100%;
+    a {
+      color: white;
+      margin: 0;
+      text-decoration: none;
+    }
+  }
+  &:hover .text {
+    opacity: 1;
+  }
+  .trailer {
+    background: #e68c43;
+    color: white;
+    cursor: pointer !important;
+    width: 80%;
+    margin-top: 30px;
+    z-index: 50;
+    &:hover {
+      background: #69360c;
+      transform: scale(1.1);
+    }
+  }
+  .chiTiet {
+    color: white;
+    margin-top: 10px;
+    background: #379470;
+    cursor: pointer;
+    width: 80% !important;
+    z-index: 50; 
+    &:hover {
+        background: #0b5338;
+        transform: scale(1.1);
+      }
+  }
+  .danhGia {
+    i {
+      color: yellow;
+      padding: 0 2px;
+    }
+  }
+}

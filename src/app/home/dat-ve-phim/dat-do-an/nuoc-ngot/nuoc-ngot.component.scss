@@ -1,0 +1,59 @@
+.text{
+    margin: 0; 
+}
+h2{
+    margin-bottom: 12px !important;
+}
+h5{
+    font-size: 15px;
+    margin-bottom: 10px !important;
+}
+h3{
+    color: #3F4980 ;
+}
+.containerControl{
+    display: flex; 
+    flex-direction: column;
+    margin-top: 20px;
+    .top{
+        display: flex;
+        justify-content: flex-end;
+        .circle{
+            background: #999999;
+            width: 30px;
+            height: 30px; 
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%; 
+            margin-bottom: 0;
+            color: white;
+            border: none;
+            &:focus{
+                border: none;
+                outline: none;
+            }
+            &.cong{
+                background: #3F4980;
+            }
+            h1{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+        .soLuong{
+            background: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            margin: 0 6px;
+            line-height: 30px;
+        }
+    }
+    .bottom{
+        .gia{
+           text-align: center;
+           color: #3F4980  ;
+           font-weight: bold; 
+        }
+    }
+}

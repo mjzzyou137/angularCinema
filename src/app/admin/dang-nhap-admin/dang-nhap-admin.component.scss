@@ -1,0 +1,24 @@
+@import '../../../styles.scss';
+.containerForm{
+    background: rgba(0, 0, 0, 0.486);
+    background-size: cover;
+    margin: 0 auto;
+    width: 40%; 
+    padding: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+ }
+ .btnAdmin{
+    background:linear-gradient(to top,#3F4980,rgb(112, 11, 11));
+     color: white;
+     margin: 0 auto;
+ }
+ .mainTab{
+     
+    background:linear-gradient(to top,#3F4980,rgb(112, 11, 11));
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+ }

@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<!-- <app-dat-ve-home></app-dat-ve-home> --> 
+<ng-container *ngIf="chiTietPhim">
+  <div class="containerChiTietPhimMain">
+    <section class="chiTietPhim">
+      <!-- <img [src]="chiTietPhim.HinhAnh" alt=""> -->
+    </section>
+    <div class="containerChiTietPhim">
+      <div class="row containerCTP">
+        <div class="col-md-3 itemCTP">
+          <img [src]="chiTietPhim.HinhAnh" alt=""> 
+        </div>
+        <div class="col-md-6 itemCTP">
+          <div class="tenPhim">
+            <h3>{{chiTietPhim.TenPhim}}</h3>
+          </div>
+          <div class="moTa">
+            <p class="mb-0">{{ chiTietPhim.MoTa }}</p>
+          </div>
+          <div class="ngayChieu-thoiGian">
+            <span>29/07/2017 - </span> <span *ngIf="thoiLuong">{{ thoiLuong }} phút</span>
+          </div>
+          
+          <div class="imax3d"><img src="http://localhost:4200/assets/image/logoimax.jpg" alt=""></div>
+          <a class="video playTrailer" [href]="chiTietPhim.Trailer"><i class="fas fa-play"></i> PLAY TRAILER</a>
+        </div>
+        <div class="col-md-3 itemCTP" style="height: 200px">
+          
+        <circle-progress [radius]="radius"
+        [percent]="tyLeRate"></circle-progress>
+        <div class="iconSao danhGia" [ngSwitch]="chiTietPhim.DanhGia">
+          <div *ngSwitchCase="1">
+              <i class="fas fa-star"></i>
+          </div>
+          <div *ngSwitchCase="'2'">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+          <div *ngSwitchCase="'3'">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+          <div *ngSwitchCase="'4'">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+          <div *ngSwitchCase="'5'">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+      </div>
+        <p class="ngDanhGia">{{ danhSachNguoiDanhGia }} người đánh giá</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+</ng-container>
+<!-- <div class="scroll">
+    <img  style="width: 100%; height: 50px;" src="../../../assets/image/loaiPhim/scroll-down.png" alt="">
+</div>  -->
+<ng-container *ngIf="chiTietPhim">
+  <app-dat-ve [chiTietPhim]="chiTietPhim.LichChieu" [maPhim]="id"></app-dat-ve>
+</ng-container>
+<!-- <div class="scroll">
+  <img  style="width: 100%; height: 50px;" src="../../../assets/image/loaiPhim/scroll-down.png" alt="">
+</div>   -->
+<app-danh-gia-phim [id]="id"></app-danh-gia-phim>
+<app-footer></app-footer>
+<!-- Button trigger modal -->

@@ -1,0 +1,180 @@
+@import "../../../styles.scss";
+.chiTietPhim {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("../../../assets/image/body-layout.jpg");
+  background-position: bottom;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    // background: rgba(0, 0, 0, 0.637);
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.24);
+  }
+}
+
+.containerChiTietPhimMain {
+  position: relative;
+}
+.containerChiTietPhim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  .row {
+    width: 70%;
+    margin: 0 auto;
+    @include rwd(1300) {
+      width: 80% !important;
+    }
+    @include md {
+      display: flex;
+      justify-content: center;
+      width: 98% !important;
+    }
+    .col-md-3 {
+      padding: 0;
+      padding-right: 30px;
+      @include lg {
+        display: flex;
+        align-items: center;
+      }
+      @include md {
+        padding-right: 0;
+        height: 70%;
+        width: 60%;
+        border: 2px solid white;
+        box-shadow: 1px 1px 10px white;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        @include xl {
+          height: 75%;
+        }
+        @include md {
+          height: 100%;
+        }
+      }
+    }
+    .col-md-6 {
+      padding: 0;
+      h3 {
+        @include md {
+          font-size: 15px;
+        }
+      }
+      .imax3d {
+        width: 100px;
+        height: 40px;
+        margin: 10px 0;
+        @include xl{
+          margin: 0;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          @include rwd(1200){
+            width:60%;
+            height: 60%;
+          }
+        }
+      }
+      .moTa {
+        width: 100%;
+        @include xl {
+          font-size: 14px;
+        }
+        @include lg {
+          font-size: 12px;
+        }
+        @include md {
+          width: 100%;
+        }
+      }
+      .playTrailer {
+        display: inline-block;
+        border: 1px solid #fb4226;
+        padding: 5px 10px;
+        background: #fb4226;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        @include rwd(1200){
+          font-size: 11px;
+        } 
+      }
+    }
+  }
+  .ngDanhGia {
+    text-align: center;
+    color: #fb4226;
+    font-weight: bold;
+  }
+
+  .iconSao {
+    text-align: center;
+    i {
+      color: #fb4226;
+      font-size: 20px;
+    }
+  }
+}
+.danhGia {
+  i {
+    color: yellow;
+    margin-bottom: 10px;
+    padding: 0 3px;
+  }
+}
+.containerCTP {
+  @include rwd(1350) {
+    width: 90% !important;
+  }
+  @include rwd(1300) {
+    display: flex !important;
+  }
+  @include xl {
+    margin-top: -115px !important;
+  }
+
+  .itemCTP {
+    &:nth-of-type(3) {
+      @include md {
+        display: none !important;
+      }
+    }
+    &:nth-of-type(2) {
+      @include md {
+        width: 66% !important;
+      }
+    }
+    &:nth-of-type(1) {
+      @include md {
+        width: 30% !important;
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<app-header></app-header>
+<app-slider></app-slider>
+
+<div class="scroll">
+    <img  style="width: 100%; height: 50px;" src="../../../assets/image/loaiPhim/scroll-down.png" alt="">
+  </div> 
+  
+<div class="bgLichChieu">
+      
+    <div class="container pt-5">
+            <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm phim"  [(ngModel)]="term" style="margin-bottom:20px">
+                    <div class="input-group-prepend" style="margin-bottom:20px">
+                        <span style="background: #379470;color:white" class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+        <ng-container *ngIf="danhSachPhim">
+            <div class="row mr-0 mr-0" *ngFor="let item of danhSachPhim | filter:term">
+                <div class="col-md-3">
+                    <img [src]="item.HinhAnh" alt="">
+                </div>
+                <div class="col-md-9">
+                    <h3>{{ item.TenPhim }} - 120 PHÚT</h3>
+                    <p class="moTa mb-0">{{ item.MoTa }}</p>
+                        <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <button (click)="ChonPhim(item.MaPhim)" class="btn mb-1">CHI TIẾT PHIM</button>
+                        <br>
+                    <app-item-lich-chieu [ItemLichChieu]="item"></app-item-lich-chieu>
+                        <!-- <span><i class="far fa-clock"></i>  Thời gian chiếu :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <button class="btn">10:10</button> -->
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<app-footer></app-footer>

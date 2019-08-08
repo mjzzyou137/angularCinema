@@ -1,0 +1,17 @@
+<div class="mainTab container1">
+    <div class="containerForm">
+        <form #formAdmin="ngForm">
+            <h3 style="color: white;font-weight:bold;padding:10px;text-align:center">ĐĂNG NHẬP ADMIN</h3>
+            <mat-form-field class="example-full-width text-light w-100">
+              <input   matInput placeholder="Username"  ngModel name="TaiKhoan">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width text-light w-100">
+                <input   matInput placeholder="Password"  ngModel name="MatKhau">
+              </mat-form-field>
+              <div class="w-100 d-flex justify-center">
+                    <button class="btnAdmin btn" (click)="DangNhap(formAdmin.value)">ĐĂNG NHẬP</button>
+              </div>
+          </form>
+    </div>
+</div>

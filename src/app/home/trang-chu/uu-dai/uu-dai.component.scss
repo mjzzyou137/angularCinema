@@ -1,0 +1,47 @@
+@import '../../../../styles.scss';
+.uuDai{
+  display: flex;
+  @include rwd(900){
+    display:block;
+  }
+  .promotion{
+    width: 10%;
+    position: relative; 
+    margin-right: 43px;
+    @include rwd(900){
+      width: 100%;
+      height: 50px;
+    }
+    h3{
+      position: absolute;
+      top: 45px;
+      right:-35px; 
+      transform: rotate(270deg);
+      color: white;
+      font-weight: bold;
+      width: 100%;
+      margin: 0;
+      @include rwd(900){
+        transform: none;
+        top: 0;
+        left: 0;
+        text-align: center;
+      }
+    }
+    img{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @include rwd(900){
+        display: none;
+      }
+    }
+  }
+  .sliderCarousel{
+    width: 82%;
+    @include md{
+      width: 100%;
+    }
+  }
+}
+ 

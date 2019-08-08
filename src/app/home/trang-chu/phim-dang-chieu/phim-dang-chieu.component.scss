@@ -1,0 +1,22 @@
+@import '../../../../styles.scss';
+
+.owl-nav {
+  .disabled {
+    display: block;
+  }
+}
+.itemPhimDangChieu {
+  height: 319px;
+  margin: 0 10px;
+}
+@media screen and (min-width:768px){
+  .owl-next{
+    display: block;
+  }
+} 
+.owl-theme{
+  width: 100% !important;
+  height: 100% !important; 
+  margin: 0 !important;
+  padding: 0 !important;
+}

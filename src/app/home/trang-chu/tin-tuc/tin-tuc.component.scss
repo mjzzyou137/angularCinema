@@ -1,0 +1,45 @@
+@import '../../../../styles.scss';
+.orange {
+  background: #e68c43;
+  height: 100%;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  overflow: hidden;
+  transition: all .5s;
+  cursor: pointer;
+  &:hover{
+    background:#379470 ;
+  }
+  @include md{
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+.green {
+  background: #379470;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+  transition: all .5s;
+  cursor: pointer;
+  &:hover{
+    background:#e68c43 ;
+  }
+  @include md{
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+.col-md-6 {
+  margin: 10px 0;
+  height: 186px;
+}
+.containerTinTuc {
+  display: flex;
+  padding-top: 60px;
+  @include rwd(1300){
+    padding-top: 0;
+  }
+}
+ 

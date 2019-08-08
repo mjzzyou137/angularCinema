@@ -1,0 +1,34 @@
+<ng-container *ngIf="itemNguoiDung">
+        <form #formChinhSua="ngForm">
+                <h2 style="color: white;text-align:center">CẬP NHẬT NGƯỜI DÙNG </h2>
+                <mat-form-field class="example-full-width w-100 text-light">
+                    <input matInput placeholder="Tài khoản" ngModel [ngModel]="itemNguoiDung.TaiKhoan" [disabled]="true"
+                        name="TaiKhoan">
+                </mat-form-field>
+                <mat-form-field class="example-full-width w-100 text-light">
+                    <input matInput placeholder="Mật khẩu" ngModel [ngModel]="itemNguoiDung.MatKhau" name="MatKhau">
+                </mat-form-field>
+                <mat-form-field class="example-full-width w-100 text-light">
+                    <input matInput placeholder="Email" ngModel [ngModel]="itemNguoiDung.Email" name="Email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width w-100 text-light">
+                    <input matInput placeholder="Họ tên" ngModel [ngModel]="itemNguoiDung.HoTen" name="HoTen">
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width w-100 text-light">
+                    <input matInput placeholder="Số điện thoại" ngModel [ngModel]="itemNguoiDung.SoDT" name="SoDienThoai">
+                </mat-form-field>
+                <select #t (change)="selectOption(t.value)"  class="w-100 py-2">
+                        <!-- Cach tren viet ngan gon neu co 1 cau lenh -->
+                        <!-- <select #t (change)="changeColor(t.value)">    -->
+                        <option value="KhachHang">Khách hàng</option>
+                        <option value="QuanTri">Quản trị</option> 
+                      
+                      </select>
+                      <br>
+                      <br>
+
+                <p style="background:#379070;color: white;font-weight: bold " class="btn themPhim"
+                    (click)="ChinhSua(formChinhSua.value)">CHẤP NHẬN</p>
+            </form>
+</ng-container>

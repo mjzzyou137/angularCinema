@@ -1,0 +1,64 @@
+.row{  
+    border-top: 2px solid #7B1FA2;
+    border-bottom: 2px solid #7B1FA2;
+    padding: 20px 0;
+    margin-left: 0px !important;
+    .col-md-3{ 
+        display: flex;
+        justify-content: center;
+        border-right: 5px solid ;
+        img{ 
+            width: 70%; 
+            display: block;
+            border-radius: 7px;
+        }
+    }
+    .col-md-9{
+        h3{
+            color: #7B1FA2;
+            font-weight: bold;
+        }
+        p{ 
+            width: 50%;
+            margin-bottom: 10px !important;
+        }
+        button{
+            background: #7B1FA2;
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+            &:nth-of-type(2){
+                background: #383839 ;
+                margin-bottom: 0;
+            }
+        }
+        span{
+            font-weight: bold;
+        }
+        .xoaPhim{
+            width: unset;
+        }
+        .suaPhim{
+            width: unset;
+            padding: 10px 0;
+        }
+    }
+}
+
+.suaPhimMain{
+    padding: 10px 0;
+}
+
+.containerCapNhat{
+    background:linear-gradient(to top,#3F4980,rgb(112, 11, 11));
+    background-size: cover;
+    margin: 10px;
+    padding: 15px;
+}
+i{
+     
+        color: yellow;
+        margin-bottom: 10px;
+        padding: 0 3px;  
+}

@@ -1,0 +1,35 @@
+<div class="bgAdmin">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a [ngClass]="{bgA:statusQuanLyPhim}" style="margin-top: 60px; cursor: pointer;" (click)="QuanLyPhim()"><i class="fas fa-film"></i>&nbsp; &nbsp;Quản lý phim</a>
+        <a [ngClass]="{bgA:statusQuanLyUser}" style="cursor: pointer" (click)="QuanLyNguoiDung()"><i class="fas fa-user-tie"></i>&nbsp;&nbsp;Quản lý người dùng</a> 
+    </div>
+    <header id="navbarAdmin">
+        <div class="containerHeader">
+            <div class="logo" (click)="LogoAdmin()">
+                <img src="../../../assets/image/logo.png" alt="">
+            </div>
+            <span onclick="openNav()"><i class="fas fa-bars menu"></i></span>
+        </div>
+    </header>
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+   
+<!--    
+    <div id="main">
+            ...
+          </div> -->
+    <div id="main" class="mainTab">
+        <mat-tab-group>
+            <mat-tab label="DANH SÁCH PHIM">
+                <div class="container">
+                    <app-danh-sach-phim></app-danh-sach-phim>
+                </div>
+            </mat-tab>
+            <mat-tab label="THÊM PHIM">
+                <div class="container container1">
+                   <app-themphim></app-themphim>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

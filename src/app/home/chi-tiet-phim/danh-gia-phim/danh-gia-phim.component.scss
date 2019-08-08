@@ -1,0 +1,76 @@
+@import '../../../../styles.scss';
+.danhGiaPhim {
+  background: url(../../../../assets/image/body-layout.jpg);
+  background-size: cover;
+  padding: 50px;
+  padding-top: 175.1px;
+  .row {
+    width: 75%;
+    margin: 0 auto;
+    @include xl{
+      width:90%;
+    }
+    h5 {
+      color: white;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+    input {
+      width: 100%;
+      border: 1.5px solid white;
+      margin-bottom: 10px;
+      background: #15151f;
+      color: white;
+      padding: 10px;
+      &::placeholder {
+        color: white;
+      }
+    }
+    textarea {
+      width: 100%;
+      border: 1.5px solid white;
+      margin-bottom: 10px;
+      background: #15151f;
+      color: white;
+      padding: 10px;
+      &::placeholder {
+        color: white;
+      }
+    }
+    button {
+      background: white;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover{
+        background: #FB4226;
+        color: white;
+      }
+
+    }
+    .thongTin {
+      height: 500px;
+      overflow-x: hidden; 
+
+      .thongTinDanhGia {
+        p {
+          color: white;
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+        .chiTietDanhGia {
+          margin-left: 15px;
+          background: white;
+          border-right: 3px solid white;
+          span {
+            color: #2A1939;
+            font-weight: bold;
+            padding: 5px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+::-webkit-scrollbar {width: 10px; height: 4px; background:white; }
+::-webkit-scrollbar-thumb { background-color: #379470; }

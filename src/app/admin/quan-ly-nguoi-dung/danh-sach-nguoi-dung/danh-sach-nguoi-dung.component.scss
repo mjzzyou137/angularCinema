@@ -1,0 +1,25 @@
+
+@import '../../../../styles.scss';
+.table{
+    border: 1px solid #dee2e6;
+    color: white;
+    thead{
+        background: #379470;
+        th{
+            border-right: 1px solid #dee2e6;
+            text-align: center;
+        }
+    }
+    tbody{
+        td{
+            border-right: 1px solid #dee2e6;
+            text-align: center;
+        }
+    }
+}
+.containerCapNhat{
+    background:linear-gradient(to top,#3F4980,rgb(112, 11, 11));
+    background-size: cover;
+    margin: 10px;
+    padding: 15px;
+}

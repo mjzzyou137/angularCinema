@@ -1,0 +1,44 @@
+@import '../../../styles.scss';
+.bgDatVe{
+    background:url(../../../assets/image/body-layout.jpg);
+    background-size: cover;
+    overflow: hidden;
+    padding: 100px;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    @include lg{
+        padding: 50px 0;
+    }
+    .title{
+        background: #379470;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 25px;
+        font-weight: bold;
+        margin: 30px 0;
+        box-shadow: 1px 1px 15px white;
+        border-radius: 5px;
+    }
+    .table{ 
+        border: 1px solid #dee2e6;
+        color: white;
+        @include lg{
+            font-size: 13px !important;
+        }
+        thead{
+            background: #379470;
+            th{
+                border-right: 1px solid #dee2e6;
+                text-align: center;
+            }
+        }
+        tbody{
+            td{
+                border-right: 1px solid #dee2e6;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="bgDatVe">
+    <div class="containerLichSu">
+        <div class="title">
+            LỊCH SỬ ĐẶT VÉ
+        </div>
+        <ng-container *ngIf="lichSuDatVe">
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <p>Họ Tên : <span>{{ lichSuDatVe.HoTen }}</span></p>
+                    <p>Tài Khoản : <span>{{ lichSuDatVe.TaiKhoan }}</span></p>
+                </div>
+                <div class="col-md-6">
+                    <p>Email : <span>{{ lichSuDatVe.Email }}</span></p>
+                    <p>Số Điện Thoại: <span>{{ lichSuDatVe.SoDT }}</span></p>
+                </div>
+            </div>
+        </ng-container>
+        <div class="row" *ngIf="lichSuDatVe">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tên phim</th>
+                            <th>Rạp</th>
+                            <th>Ngày đặt</th>
+                            <th>Giờ đặt</th>
+                            <th>Mã Ghế</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of lichSuDatVe.DanhSachVeDaDat">
+                            <td>{{item.TenPhim}}</td>
+                            <td>{{item.Rap}}</td>
+                            <td>{{item.NgayDat | date:"dd/MM/yyyy"}}</td>
+                            <td>{{item.NgayDat | date:"hh:mm"}}</td>
+                            <td>{{item.MaGhe}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

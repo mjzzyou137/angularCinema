@@ -1,0 +1,48 @@
+@import "../../../../styles.scss";
+.img {
+  height: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  @include lg {
+    width: 30px;
+    height: 36px;
+  }
+  img {
+    width: 100%;
+  }
+}
+.chuadat {
+  margin-top: 0px;
+  transition: all 0.5s;
+  cursor: pointer;
+  &:hover {
+    margin-top: -46.5px;
+    @include lg {
+    margin-top: -31.5px;}
+  }
+  @include lg{
+    margin-top: 0px !important;
+  }
+}
+.dangdat {
+  margin-top: -46.5px;
+  transition: all 0.5s;
+  cursor: pointer;
+  @include lg {
+    margin-top: -31.5px;
+  }
+}
+.dadat {
+  margin-top: -140px;
+  transition: all 0.5s;
+  cursor: no-drop;
+  &:hover {
+    margin-top: -140px !important;
+    @include lg{
+      margin-top: -97.5px !important;
+    }
+  }
+  @include lg {
+    margin-top: -97.5px;
+  }
+}

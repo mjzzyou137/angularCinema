@@ -1,0 +1,23 @@
+button{ 
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    background: #379470 ;
+    margin-top: 10px;
+    margin-bottom: 0; 
+    i{
+        margin-right: 7px;
+    }
+}
+.ctn{
+    margin-top: 10px;
+    background:linear-gradient(45deg,#379470,#E68C43);
+}
+.suatChieu{
+    border-top: 1px solid #7B1FA2;
+    padding: 10px 0;
+    margin-top: 10px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}

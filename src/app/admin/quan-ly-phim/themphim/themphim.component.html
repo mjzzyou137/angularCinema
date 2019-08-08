@@ -1,0 +1,33 @@
+<form #formThemPhim="ngForm">
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Mã phim" ngModel name="MaPhim">
+    </mat-form-field>
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Tên phim" ngModel name="TenPhim">
+    </mat-form-field>
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Trailer" ngModel name="Trailer">
+    </mat-form-field>
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Hình ảnh" ngModel name="HinhAnh">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Mô tả" ngModel name="MoTa">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Mã nhóm" ngModel name="MaNhom">
+    </mat-form-field>
+    <mat-form-field class="example-full-width w-100 text-light">
+            <input matInput placeholder="Thời lượng" ngModel name="ThoiLuong">
+        </mat-form-field>
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Ngày khởi chiếu" ngModel name="NgayKhoiChieu">
+    </mat-form-field>
+    <mat-form-field class="example-full-width w-100 text-light">
+        <input matInput placeholder="Đánh giá" ngModel name="DanhGia">
+    </mat-form-field>
+    <p style="background:#379070;color: white;font-weight: bold " class="btn themPhim" (click)="ThemPhim(formThemPhim.value)">THÊM PHIM</p>
+</form>  
+=

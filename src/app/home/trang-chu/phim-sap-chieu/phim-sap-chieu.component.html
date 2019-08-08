@@ -1,0 +1,10 @@
+<div class="container">
+        <owl-carousel
+        [options]="option" 
+        [items]="DanhSachPhimSapChieu" 
+        [carouselClasses]="['owl-theme']">
+        <div class="itemPhimSapChieu" *ngFor="let image of DanhSachPhimSapChieu;let i = index">
+            <app-item-phim [ItemLoaiPhim]="image"></app-item-phim>
+        </div>
+    </owl-carousel>
+</div>

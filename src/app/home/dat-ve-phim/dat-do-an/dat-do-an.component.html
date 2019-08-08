@@ -1,0 +1,42 @@
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="divMain" style="background:#666666">
+            <div class="containerDoAn">
+              <div class="bapRang">
+                <div sty class="titleClose">
+                    <h1 class="titleBapRang">BẮP RANG</h1> 
+                </div>
+                <div class="bgMain">
+                  <app-bap-rang class="ItemBapRang" *ngFor="let item of ItemBapRang; let STT = index"
+                    [ngClass]="{bgColor:STT % 2 === 1}" [DoAn]="item" [ItemChung]="ItemChung" (eventChonDoAn)="TongTien($event)"
+                    (eventGiamDoAn)="TongTienGiamDi($event)">
+                  </app-bap-rang>
+                  <h1 class="titleBapRang">NƯỚC NGỌT</h1>
+                  <div class="bgMain">
+                    <app-nuoc-ngot class="ItemBapRang" *ngFor="let item of ItemNuocNgot; let STT = index"
+                      [ngClass]="{bgColor:STT % 2 === 1}" [DoAn]="item" [ItemChung]="ItemChung" (eventChonDoAn)="TongTien($event)"
+                      (eventGiamDoAn)="TongTienGiamDi($event)">
+                    </app-nuoc-ngot>
+                  </div>
+                </div>
+              </div>
+              <div class="close">
+                <i class="fas fa-window-close"  data-dismiss="modal"></i>
+              </div>
+            <div class="tongTienDoAn" *ngIf="TongTienDoAn !=0">
+              <img src="https://cinestar.com.vn/catalog/view/theme/default/images/icon-promotion.png" alt="">
+              <div class="containerH3">
+                  <h3 *ngIf="TongTienDoAn != 0">{{ TongTienDoAn }}.000đ</h3>
+                  <ng-container *ngFor="let item of ItemChung">
+                    <p *ngIf="item.SoLuong != 0">
+                      {{ item.SoLuong }} x {{ item.GioiThieu }}
+                    </p>
+                  </ng-container>
+              </div>
+              <h5  data-dismiss="modal" class="chapNhanDoAn" (click)="ChapNhanDoAn()">CHẤP NHẬN</h5>
+            </div>
+          </div>
+    </div>  
+  </div>

@@ -1,0 +1,99 @@
+@import '../../../styles.scss';
+// body{
+//     color: white !important;
+// }
+.bgAdmin{
+    background: #3F4980;
+    background-size: cover;
+}
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */ 
+    top: 0; /* Stay at the top */
+    left: 0; 
+    z-index: 100; 
+    background-color: #379070; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+header{
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.185);
+    .containerHeader{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            width: 250px;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .menu{
+            color:white;   
+            font-size: 35px; 
+            cursor: pointer;
+        }
+    }
+}
+.container1{
+    background: #3F4980 !important;
+    width: 50% !important;
+}
+.container{ 
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    
+}
+
+.bgA{
+  background: #ED852F;
+  padding: 7px 0;
+}

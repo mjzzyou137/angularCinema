@@ -1,0 +1,18 @@
+<div class="loaiPhim">
+    <div class="row"> 
+        <div class="col-md-12 text-center loaiPhimChung mb-4">
+            <h3 class="phimChung" [ngClass]="{phimChungTrangThai:trangThaiPhimDangChieu}" (click)="HienPhimDangChieu()">PHIM ĐANG CHIẾU</h3>
+            <h3 class="phimChung" [ngClass]="{phimChungTrangThai:!trangThaiPhimDangChieu}" (click)="HienPhimSapChieu()">PHIM SẮP CHIẾU</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" *ngIf="trangThaiPhimDangChieu; else phimSapChieu">
+            <app-phim-dang-chieu></app-phim-dang-chieu>
+        </div>
+        <ng-template #phimSapChieu>
+            <div class="col-md-12">
+                <app-phim-sap-chieu></app-phim-sap-chieu>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+@import "../../../styles.scss"; 
+@import '../../../../node_modules/ngx-bar-rating/themes/br-movie-theme.css';
+.scroll{ 
+  height: 35px;
+  img{
+    height: 100%;
+  }
+  @include lg{
+    &:nth-of-type(1){
+      display: none;
+    }
+  }
+}
+.uuDaiTinTuc{ 
+    padding: 60px;
+    .containerUuDaiTinTuc{
+        width: 75%;
+        margin: 0 auto;  
+        @include rwd(1300){
+          width: 85%; 
+        }
+        @include rwd(900){
+          margin-top: 50px;
+        }
+    }
+    @include rwd(1300){
+      padding:0;
+    }
+}
+.bgChung{
+    background: url("../../../assets/image/body-layout.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important; 
+}
+.congNghe{
+  @include lg{
+    display: none;
+  }
+}
+.promotionTinTuc2{
+  display: none; 
+  @include rwd(1300){
+    display: block;
+  }
+}
+.promotionTinTuc {
+    width: 100%;
+    position: relative;
+    margin-right: 43px; 
+    @include rwd(1300){
+      display: none;
+    }
+    h3 {
+      position: absolute;
+      bottom: 160px;
+      left: -120px;
+      transform: rotate(270deg);
+      color: white;
+      font-weight: bold;
+      margin: 0;
+    }
+    img {
+      position: absolute;
+      bottom: 0;
+      left: -140px;
+    }
+  } 
+  .promotionTinTuc2 {
+    width: 100%;
+    position: relative; 
+    height: 50px;
+    @include rwd(1300){
+      margin-top: 50px;
+    }
+    h3 { 
+      color: white;
+      font-weight: bold;
+      margin: 0;
+      text-align: center;
+    } 
+  } 

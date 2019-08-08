@@ -1,0 +1,35 @@
+.congNghePhim {
+  width: 100%;
+  padding: 20px 0;
+  background: url("./../../../../assets/image/congNghePhim/bg.jpg");
+  .row {
+    width: 50%;
+    margin: 0 auto;
+    .col-md-12 {
+      display: flex;
+      justify-content: space-between;
+      img{
+          cursor: pointer;
+      }
+    }
+  }
+}
+.modal-content{
+    border: 10px solid rgba(165, 163, 163, 0.534);
+    padding: 30px 30px;
+    h1{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    h2{ 
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 35px;
+    }
+} 
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 900px;
+    margin: 1.75rem auto;
+  }
+}

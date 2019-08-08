@@ -1,0 +1,20 @@
+
+    <form #formThemNguoi="ngForm">
+        <mat-form-field class="example-full-width w-100 text-light">
+            <input matInput placeholder="Tài khoản" ngModel name="TaiKhoan">
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-100 text-light">
+            <input matInput placeholder="Mật khẩu" ngModel name="MatKhau">
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-100 text-light">
+            <input matInput placeholder="Email" ngModel name="Email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-100 text-light">
+            <input matInput placeholder="Họ tên" ngModel name="HoTen">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width w-100 text-light">
+            <input matInput placeholder="Số điện thoại" ngModel name="SoDienThoai">
+        </mat-form-field> 
+        <p style="background:#379070;color: white;font-weight: bold " class="btn themPhim" (click)="ThemNguoiDung(formThemNguoi.value)">THÊM PHIM</p>
+    </form>  

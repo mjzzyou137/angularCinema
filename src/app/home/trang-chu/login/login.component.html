@@ -1,0 +1,38 @@
+<div class="modal-content"> 
+        <div class="containerLogin">
+            <div class="sign">
+                <p>Sign up</p>
+                <form #formDangNhap="ngForm" >
+                    <input type="text" class="signup" placeholder="Username"  name="TaiKhoan" ngModel> 
+        
+                    <input type="password" class="signup" placeholder="Password" name="Password" ngModel> 
+        
+                </form>
+                <button  data-dismiss="modal" type="submit" class="btn buttonSign" (click)="DangNhap(formDangNhap.value)">SIGN UP</button>
+            </div>
+            <div class="login">
+                <h1>Sign in with social network</h1>
+                <div class="social"> 
+                    <a  data-dismiss="modal" (click)="signInWithFB()" class="loginFacebook">Login in with Facebook</a>
+                    <a  data-dismiss="modal" href="#" class="loginTwitter">Login in with Twitter</a>
+                    <a  data-dismiss="modal" href="#" class="loginGoogle">Login in with Google</a>
+                    <span *ngIf="user"> {{ user.name }}</span>
+                </div>
+            </div>
+        </div>
+         
+</div>
+
+ 
+
+
+
+
+<!-- 
+<button class="btn btn-danger" (click)="signInWithFB()" >LOGIN </button> 
+ 
+<div>
+                <img src="{{ user.photoUrl }}">
+    <h4>{{ user.name }}</h4>
+    <p>{{ user.email }}</p>
+  </div> -->

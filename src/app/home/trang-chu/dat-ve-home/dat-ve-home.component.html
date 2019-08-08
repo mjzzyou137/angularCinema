@@ -1,0 +1,76 @@
+
+<ng-container *ngIf="danhSachPhim">
+    <div class="toolsHome ">
+      <div class="containerToolsHome">
+        <h3>MUA VÉ ONLINE</h3>
+        <p><span>(*)</span> Chọn vào suất chiếu để đặt vé trực tuyến </p>
+         
+        <form>
+          <!-- CHỌN PHIM -->
+          <mat-form-field>
+            <mat-label class="title">Chọn phim</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let item of danhSachPhim;let index = index" [value]="index"  (click)="ChonPhim(item.MaPhim)">
+                {{ item.TenPhim }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <!-- CHỌN RẠP -->
+          <mat-form-field class="mx-3" *ngIf="trangThaiChonRap;else statusChonRap">
+            <mat-label>Chọn rạp</mat-label>
+            <mat-select>
+              <mat-option value="2" [disabled]="true">Vui lòng chọn phim</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <ng-template #statusChonRap>
+            <mat-form-field class="mx-3">
+              <mat-label>Chọn rạp</mat-label>
+              <mat-select>
+                <mat-option value="2" (click)="ChonRap()" >CGV</mat-option>
+                <mat-option value="3" (click)="ChonRap()" >Cinestar</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </ng-template>
+  
+          <!-- CHỌN NGÀY CHIẾU -->
+          <mat-form-field  *ngIf="trangThaiChonNgayChieu;else statusChonNgay">
+            <mat-label>Chọn ngày chiếu</mat-label>
+            <mat-select>
+              <mat-option value="2" [disabled]="true">Vui lòng chọn phim và rạp</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <ng-template #statusChonNgay>
+              <mat-form-field>
+                  <mat-label>Chọn ngày chiếu</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let item of chiTietPhim.LichChieu;let index = index" [value]="index"  
+                    (click)="ChonNgayChieu(item.NgayChieuGioChieu,item.MaLichChieu)">
+                     {{ item.NgayChieuGioChieu | date:"dd-MM-yyyy"}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </ng-template>
+  
+          <!-- CHỌN SUẤT CHIẾU --> 
+          <mat-form-field class="mx-3"  *ngIf="trangThaiChonSuatChieu;else statusChonSuat">
+              <mat-label>Chọn ngày chiếu</mat-label>
+              <mat-select>
+                <mat-option value="2" [disabled]="true">Vui lòng chọn phim,rạp và ngày chiếu</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <ng-template #statusChonSuat>
+                <mat-form-field class="ml-3">
+                    <mat-label>Chọn suất chiếu</mat-label>
+                    <mat-select>
+                      <mat-option (click)="datVe()">
+                        {{ ngayChieuGioChieu | date:"hh:mm"}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> 
+            </ng-template> 
+        </form> 
+      </div>
+    </div>
+  
+  </ng-container>

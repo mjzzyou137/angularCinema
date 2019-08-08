@@ -1,0 +1,36 @@
+
+<!-- <p style="background:#ED852F;color: white;font-weight: bold " class="btn suaPhim" (click)="suaPhim()">CẬP NHẬT PHIM</p> -->
+
+<ng-container *ngIf="itemPhim">
+    <div class="col-md-12 suaPhim">
+        <form #formSuaPhim="ngForm">
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Mã phim" ngModel [ngModel]="itemPhim.MaPhim" name="MaPhim" [disabled]="true">
+          </mat-form-field>
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Tên phim" ngModel [ngModel]="itemPhim.TenPhim" name="TenPhim">
+          </mat-form-field>
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Trailer" ngModel [ngModel]="itemPhim.Trailer" name="Trailer">
+          </mat-form-field>
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Hình ảnh" ngModel [ngModel]="itemPhim.HinhAnh" name="HinhAnh">
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Mô tả" ngModel [ngModel]="itemPhim.MoTa" name="MoTa">
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Mã nhóm" ngModel [ngModel]="itemPhim.MaNhom" name="MaNhom">
+          </mat-form-field>
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Ngày khởi chiếu" ngModel [ngModel]="itemPhim.NgayKhoiChieu" name="NgayKhoiChieu">
+          </mat-form-field>
+          <mat-form-field class="example-full-width w-100 text-light">
+              <input matInput placeholder="Đánh giá" ngModel [ngModel]="itemPhim.DanhGia" name="DanhGia">
+          </mat-form-field>
+          <p style="background:#379070;color: white;font-weight: bold " class="btn themPhim" (click)="SuaPhimMain(formSuaPhim.value)">CHẤP NHẬN</p>
+      </form> 
+      </div>
+</ng-container>

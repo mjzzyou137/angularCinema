@@ -1,0 +1,60 @@
+
+@import  '../../../styles.scss';
+
+.bgLichChieu{
+    background: url("../../../assets/image/body-layout.jpg"); 
+    .row{  
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        padding: 20px 0;
+        .col-md-3{
+            height:300px;
+            display: flex;
+            justify-content: flex-end;
+            border-right: 5px solid ;
+            @include md{
+                border-right: none;
+                justify-content: flex-start;
+            }
+            img{ 
+                height: 100%;
+                display: block;
+                border-radius: 7px;
+            }
+        }
+        .col-md-9{
+            .moTa{
+                color: white;
+            }
+            h3{
+                color: white;
+                font-weight: bold;
+            }
+            p{ 
+                
+                width: 50%;
+                margin-bottom: 10px !important;
+                &.star{
+                    color: yellow;
+                    margin-bottom: 10px;
+                    padding: 0 3px; 
+                }
+            }
+            button{
+                background: #EC842F;
+                padding: 5px 10px;
+                color: white;
+                font-weight: bold;
+                margin-bottom: 20px;
+                &:nth-of-type(2){
+                    background: #383839 ;
+                    margin-bottom: 0;
+                }
+            }
+            span{
+                font-weight: bold;
+            }
+            
+        }
+    }
+}

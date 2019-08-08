@@ -1,0 +1,81 @@
+/* --- FOOTER --- */
+@import "../../../../styles.scss";
+footer {
+  background: url("../../../../assets/image/uuDaiTinTuc/bg-uu-dai-tin-tuc.jpg");
+  background-position: bottom;
+  background-size: cover;
+  padding: 30px 0;
+  color: white;
+  // @include rwd(1301){
+  //     margin-top: 30px;
+  // }
+}
+footer .container4 {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  @include md{
+      width: 95%; 
+  }
+}
+h2 {
+  border-left: 2px solid #e6c029;
+  padding-left: 10px;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer; 
+  transition: all .5s;
+  &:hover{
+    color: #e6c029;
+    transform: scale(1.1);
+  }
+  @include lg{
+    font-size: 13px !important;
+  }
+}
+footer .span1,
+footer i {
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    color: #e6c029;
+    transform: scale(1.1);
+  }
+  
+  @include lg{
+    font-size: 13px !important;
+  }
+}
+footer .icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+.col-md-3 {
+  @include md {
+    width: 48% !important;
+    margin-bottom: 10px;
+    height: 30px;
+  }
+  i{
+    @include md{
+      display: none;
+    }
+  }
+  .span1{
+    display: inline-block;
+    transition: all .5s; 
+    @include xl{
+      font-size: 14px;
+    }
+    @include md{
+      display: none;
+    }
+  }
+} 
+.download{
+  @include md{
+    margin-top: 25px !important;
+  }
+}

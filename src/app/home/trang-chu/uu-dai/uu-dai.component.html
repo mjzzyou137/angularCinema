@@ -1,0 +1,13 @@
+ 
+<div class="uuDai">
+    <div class="promotion">
+        <h3>ƯU ĐÃI</h3>
+        <img src="../../../../assets/image/uuDaiTinTuc/uuDai/icon-promotion.png" alt="">
+    </div>
+    <owl-carousel class="sliderCarousel" [options]="option" [items]="images"
+        [carouselClasses]="['owl-theme' ]">
+        <div class="item" *ngFor="let image of DanhSachUuDai;let i = index">
+            <app-item-uu-dai [ItemUuDai]="image"></app-item-uu-dai>
+        </div>
+    </owl-carousel>
+</div>

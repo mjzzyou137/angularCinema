@@ -1,0 +1,58 @@
+<div class="row mt-5">
+
+    <div class="col-md-12">
+            <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm"  [(ngModel)]="term" style="margin-bottom:20px">
+                    <div class="input-group-prepend" style="margin-bottom:20px">
+                        <span style="background: #379470;color: white" class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tài khoản</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Mật khẩu</th>
+                    <th>Tên loại người dùng</th>
+                    <th>Chỉnh sửa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <ng-container *ngIf="listUser"> -->
+                <tr *ngFor="let item of listUser | paginate: { itemsPerPage: 10, currentPage: p } | filter:term">
+                    <td>{{ item.TaiKhoan }}</td>
+                    <td>{{ item.Email }}</td>
+                    <td>{{ item.SoDT }}</td>
+                    <td>{{ item.MatKhau }}</td>
+                    <td>{{ item.TenLoaiNguoiDung }}</td>
+                    <td>
+                        <button class="btn mb-1" style="background: #DB7E33;width: 100px;color: white;font-weight: bold"
+                            (click)="ChinhSua(item)" data-toggle="modal" data-target="#modelId">Chỉnh sửa</button>
+                        <br>
+                        <button (click)="Xoa(item.TaiKhoan)" class="btn" style="background: #0fdacf;width: 100px;color: white;font-weight: bold">Xóa</button>
+                    </td>
+
+                </tr>
+                <!-- </ng-container> -->
+            </tbody>
+        </table>
+        <div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modalError">
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="containerCapNhat">
+                    <app-cap-nhat-nguoi-dung [itemNguoiDung]="itemNguoiDung"></app-cap-nhat-nguoi-dung>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

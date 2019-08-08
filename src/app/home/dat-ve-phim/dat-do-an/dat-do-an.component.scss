@@ -1,0 +1,77 @@
+@import '../../../../styles.scss';
+.divMain{ 
+    position: relative;
+    .containerDoAn{ 
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: white;
+        .bapRang{
+            .titleBapRang{
+                color: white;
+                background: #3F4980;
+                margin:0;
+                padding:15px 15px;
+            }
+        }
+    }
+    .tongTienDoAn{
+        position: fixed;
+        top: 30%;
+        left: 5%;
+        width: 200px; 
+        text-align: center;
+        color: white; 
+        h3{
+            margin: 0;
+            font-weight: bold;
+        }
+        p{
+            font-size: 12px;
+            margin: 0;
+            font-weight: bold;
+        }
+    }
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 28px;
+        cursor: pointer;
+        i{
+            color: white;
+            font-size: 52px;
+        }
+    }
+    .chapNhanDoAn{
+        padding: 5px 10px;
+        background: #3F4980;
+        margin-top: 17px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+.bgMain{
+    background: #E8E7E7; 
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    .ItemBapRang{
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+    } 
+}
+.bgColor {
+    background-color: rgb(223, 219, 219)!important;
+} 
+@media (min-width: 576px){
+    .modal-dialog { 
+    max-width: 760px;
+    margin: 0 auto;
+    }
+}
+.containerH3{
+      @include xl{
+        background: rgba(63, 73, 128, 0.52);
+        padding: 10px
+      }
+}

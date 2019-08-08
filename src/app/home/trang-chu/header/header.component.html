@@ -1,0 +1,141 @@
+<!-- <header id="navbarHeader">
+  <div class="containerHeader">
+    <a (click)="TrangChu()" class="logo"> 
+        <img src="../../../../assets/image/logo.png" alt=""> 
+    </a>
+    <ul class="nav">
+      <li (click)="LichChieu()"><a >LỊCH CHIẾU</a></li> 
+      <li (click)="TinTuc()"><a>TIN TỨC</a></li>
+      <li (click)="UuDai()"><a>ƯU ĐÃI</a></li>
+      <ng-container *ngIf="statusLogin;else daDangNhap">
+        <li class="reg" data-toggle="modal" data-target="#dangky"><a>Đăng ký</a></li>
+        <li class="log" data-toggle="modal" data-target="#dangnhap"><a>Đăng nhập</a></li>
+      </ng-container>
+      <ng-template #daDangNhap>
+        <li (click)="LichSuDatVe()"><a>LỊCH SỬ ĐẶT VÉ</a></li>
+        <li class="avatar" (click)="clickUser(dataUser.MaLoaiNguoiDung)"
+        style="cursor: pointer;">
+          <img [src]="photoUrl" alt="">
+          <span>{{ dataUser.TaiKhoan }}</span>
+          <p *ngIf="trangThaiClickUser" (click)="signOut()">ĐĂNG XUẤT</p>
+          <p  *ngIf="trangThaiClickUser" (click)="thongTin()">THÔNG TIN TÀI KHOẢN</p>
+         <ng-container *ngIf="statusQuanTri">
+          <p  *ngIf="trangThaiClickUser" (click)="StatusQuanTri()">QUẢN TRỊ</p>
+         </ng-container>
+        </li>
+      </ng-template>
+      
+    </ul>
+    <span class="menU">
+      
+      <li class="iconMenu"><i class="fas fa-bars"></i></li>
+    </span>
+
+  </div>
+</header> -->
+<header id="navbarHeader">
+  <div class="container3">
+    <div (click)="TrangChu()" class="logo"><img src="../../../../assets/image/logo.png" alt="#">
+    </div>
+    <i class="fas fa-bars menu" onclick="menu()" ></i>
+    <ul class="nav nav2">
+
+      <ng-container *ngIf="statusLogin;else daDangNhap">
+        <li class="reg" data-toggle="modal" data-target="#dangky"><a>Đăng ký</a></li>
+        <li class="log" data-toggle="modal" data-target="#dangnhap"><a>Đăng nhập</a></li>
+      </ng-container>
+      <ng-template #daDangNhap>
+        <li (click)="LichSuDatVe()"><a>LỊCH SỬ ĐẶT VÉ</a></li>
+        <li class="avatar" (click)="clickUser(dataUser.MaLoaiNguoiDung)" style="cursor: pointer;">
+          <img [src]="photoUrl" alt="">
+          <span>{{ dataUser.TaiKhoan }}</span>
+          <p *ngIf="trangThaiClickUser" (click)="signOut()">ĐĂNG XUẤT</p>
+          <p *ngIf="trangThaiClickUser" (click)="thongTin()">THÔNG TIN TÀI KHOẢN</p>
+          <ng-container *ngIf="statusQuanTri">
+            <p *ngIf="trangThaiClickUser" (click)="StatusQuanTri()">QUẢN TRỊ</p>
+          </ng-container>
+        </li>
+      </ng-template>
+    </ul>
+    <ul class="nav nav1">
+      <li (click)="LichChieu()"><a>LỊCH CHIẾU</a></li>
+      <li (click)="TinTuc()"><a>TIN TỨC</a></li>
+      <li (click)="UuDai()"><a>ƯU ĐÃI</a></li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  <ul class="nav nav3">
+    <li (click)="LichChieu()"><a>LỊCH CHIẾU</a></li>
+    <li (click)="TinTuc()"><a>PHIM</a></li> 
+    <li (click)="UuDai()"><a>ƯU ĐÃI</a></li>
+  </ul>
+</header>
+
+<!-- The Modal LOGIN-->
+<div class="modal fade" id="dangnhap">
+  <div class="modal-dialog">
+    <app-login (eventDangNhap)="DangNhap($event)" (eventDangNhapFacebook)="DangNhapFacebook($event)"></app-login>
+  </div>
+</div>
+<!-- The Modal REGISTER-->
+<div class="modal fade" id="dangky">
+  <div class="modal-dialog">
+    <app-register></app-register>
+  </div>
+</div>
+
+
+<!-- <div>
+  <img src="{{ user.photoUrl }}">
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div> -->
+
+
+<!-- login -->
+<!-- <div class="modal-content">
+      <!-- Login -->
+<!-- <div class="containerLogin">
+        <div class="sign">
+          <p>Sign up</p>
+          <form #formDangNhap="ngForm">
+            <input class="signup" type="text" placeholder="Username" ngModel name="TaiKhoan" required #taikhoan='ngModel'
+              minlength="5" maxlength="15">
+            <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
+              <div *ngIf="taikhoan.errors.required" class="alert alert-danger">
+                Chưa nhập tài khoản
+              </div> -->
+<!-- Kiểm tra minlength max length -->
+<!-- <div class="alert alert-danger" *ngIf="taikhoan.errors.minlength || taikhoan.errors.maxlength">
+                Tài khoản phải từ 5 - 15 kí tự
+              </div>
+            </div>
+            <input class="signup" type="password" placeholder="Password" minlength="10" maxlength="20"
+            required #matkhau='ngModel' ngModel name="MatKhau">
+        <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)"> -->
+<!-- Kiêm tra rỗng -->
+<!-- <div *ngIf="matkhau.errors.required" class="alert alert-danger">
+                Vui lòng nhập mật khẩu
+            </div> -->
+<!-- Kiểm tra minlength max length -->
+<!-- <div class="alert alert-danger"
+                *ngIf="matkhau.errors.minlength || matkhau.errors.maxlength">
+                Mật khẩu phải từ 10 - 20 kí tự
+            </div>
+        </div>
+          </form>
+          <button class="buttonSign" [disabled]="formDangNhap.invalid" (click)="DangNhap(formDangNhap.value)">SIGN UP</button>
+        </div>
+        <div class="login">
+          <h1>Sign in with social network</h1>
+          <div class="social">
+            <a  (click)="signInWithFB()" class="loginFacebook">Login in with Facebook</a>
+            <a href="#" class="loginTwitter">Login in with Twitter</a>
+            <a href="#" class="loginGoogle">Login in with Google</a>
+            <div *ngIf="ngDungMain">
+              <h3></h3>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div> -->

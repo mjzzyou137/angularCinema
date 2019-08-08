@@ -1,0 +1,289 @@
+@import "../../../styles.scss";
+.bgDatVe {
+  background: url(../../../assets/image/body-layout.jpg);
+  background-size: cover;
+  overflow: hidden;
+  padding: 100px;
+  position: relative;
+  @include xl {
+    padding: 100px 0;
+  }
+  @include lg{
+    padding: 10px 0;
+  }
+  .listGhe {
+    .containerRow {
+      display: flex;
+      justify-content: space-between;
+      .itemListGhe {
+        height: 50px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        .img {
+          width: 50px;
+          height: 100%;  
+        }
+        span {
+          display: flex;
+          text-align: center;
+          align-items: center;
+          color: white;
+          font-weight: bold;
+          @include lg{
+            font-size:13px;
+          }
+        }
+      }
+    }
+  }
+  .manHinh {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(255, 230, 0);
+    @include lg{
+      margin-top:20px;
+      margin-bottom:20px;
+    }
+  }
+  .containerGhe {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 19px;
+    justify-content: center;
+    @include lg{
+      padding:0;
+    }
+    .ghe {
+      margin: 15px 14px;
+      @include lg{
+        margin:15px 6px;
+      }
+    }
+  }
+  .container {
+    .intro {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid gray;
+      box-shadow: 1px 1px 10px rgb(255, 255, 255);
+      color: white;
+      padding: 30px 40px;
+      outline: 1px solid white;
+      font-weight: bold;
+      @include lg {
+        flex-direction: column;
+        padding: 0px;
+        font-size: 13px !important;
+        margin-top:0;
+      }
+      .gheConTrong {
+        @include lg {
+          justify-content: center;
+          padding: 10px 0;
+        }
+        .conTrong {
+          padding: 10px 13px;
+          background: #f3751f;
+          border-radius: 5px;
+          border-bottom: 0;
+          @include lg{
+            width:30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius:50%;
+            padding: 0 ;
+          }
+        }
+      }
+      .gheDaDat {
+        @include lg {
+          justify-content: center;
+          padding: 10px 0;
+        }
+        .daDat {
+          padding: 10px 13px;
+          background: #00843e;
+          border-radius: 5px;
+          border-bottom: 0;
+          @include lg{
+            width:30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius:50%;
+            padding: 0 ;
+          }
+        }
+      }
+      .gheDangChon {
+        @include lg {
+          justify-content: center;
+          padding: 10px 0;
+        }
+        .dangChon {
+          padding: 10px 13px;
+          background: #008fbe;
+          border-radius: 5px;
+          border-bottom: 0;
+          margin-right: 10px;
+          @include lg{
+            padding: 4px 6px;
+          }
+        }
+      }
+    }
+  }
+  .containerBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    .btnChung {
+      color: white;
+      font-weight: bold;
+      background: #f3751f;
+      margin: 0 1px;
+    }
+  }
+  .setting {
+    position: absolute;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background: white;
+    transition: all 0.5s;
+    border: 3px solid #3f4980;
+    .containerSetting {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .close {
+        position: absolute;
+        right: 8%;
+        top: 2%;
+        z-index: 3;
+        color: #3f4980;
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .thongTinPhim {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        padding: 20px;
+        h4 {
+          font-weight: bold;
+          font-size: 30px;
+          color: white;
+          background: #3f4980;
+          text-align: center;
+          padding: 5px 5px;
+          margin-bottom: 30px;
+          margin-top: 50px;
+        }
+        h5 {
+          font-weight: bold;
+          color: white;
+          background: #3f4980;
+          text-align: center;
+          padding: 5px;
+        }
+        .containerThanhToan {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 25px;
+          h5 {
+            display: inline-block;
+            padding: 15px 20px;
+            cursor: pointer;
+          }
+        }
+        .tongTien {
+          background: #3f4980;
+          color: white;
+          padding: 25px 0;
+          margin-top: 20px;
+          display: block;
+        }
+        .line {
+          background: #3f4980;
+          width: 100%;
+          height: 2px;
+          margin-top: 3px;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+          li {
+            list-style: none;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+            .listThongTin {
+              color: #3f4980;
+            }
+          }
+        }
+      }
+    }
+    .soGhe {
+      padding: 5px;
+      background: #3f4980;
+      margin-left: 5px;
+      color: white;
+    }
+  }
+  .rightToLeft {
+    right: 0;
+    transition: all 0.5s;
+  }
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
+.thanhToan {
+  font-weight: bold;
+  color: white;
+  background: #3f4980;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+}
+.none {
+  display: none;
+}
+.countDown {
+  font-size: 30px;
+  text-shadow: 1px 1px 10px white;
+  @include lg {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
+.gheConTrong,
+.gheDaDat,
+.gheDangChon {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: unset !important;
+  }
+}

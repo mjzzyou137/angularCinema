@@ -1,0 +1,93 @@
+<div class="modal-content registerContent">
+
+    <!-- Modal body -->
+    <div class="modal-body registerBody">
+        <div class="header-main">
+            <h1>REGISTER HERE</h1>
+            <div class="header-bottom">
+                <div class="header-right w3agile">
+                    <div class="header-left-bottom agileinfo">
+                        <form #formDangKy="ngForm" (ngSubmit)="DangKy(formDangKy.value)">
+                            <div class="icon1">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" placeholder="Enter your username" ngModel name="TaiKhoan" required
+                                    #taikhoan='ngModel' minlength="5" maxlength="15">
+                                <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
+                                    <div *ngIf="taikhoan.errors.required" class="text-danger font-weight-bold">
+                                        Chưa nhập tài khoản
+                                    </div>
+                                    <!-- Kiểm tra minlength max length -->
+                                    <div class="text-danger font-weight-bold"
+                                        *ngIf="taikhoan.errors.minlength || taikhoan.errors.maxlength">
+                                        Tài khoản phải từ 5 - 15 kí tự
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon1">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                <input type="password" placeholder="Create password" minlength="10" maxlength="20"
+                                    required #matkhau='ngModel' ngModel name="Password">
+                                <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)">
+                                    <!-- Kiêm tra rỗng -->
+                                    <div *ngIf="matkhau.errors.required" class="text-danger font-weight-bold">
+                                        Vui lòng nhập mật khẩu
+                                    </div>
+                                    <!-- Kiểm tra minlength max length -->
+                                    <div class="text-danger font-weight-bold"
+                                        *ngIf="matkhau.errors.minlength || matkhau.errors.maxlength">
+                                        Mật khẩu phải từ 10 - 20 kí tự
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon1">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" placeholder="Enter your name" ngModel name="HoTen" [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                                "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽếềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                                "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"' #hoten='ngModel'>
+                                <div *ngIf="hoten.errors &&  (hoten.touched || hoten.dirty)">
+                                    <div *ngIf="hoten.errors.pattern" class="text-danger font-weight-bold">
+                                        Vui lòng nhập họ tên đúng
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="icon1">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input type="email" placeholder="Enter your email" ngModel name="Email" #email="ngModel"
+                                    required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <div *ngIf="email.errors && (email.dirty || email.touched)">
+                                    <div *ngIf="email.errors.required" class="text-danger font-weight-bold">
+                                        Vui lòng nhập vào email
+                                    </div>
+                                    <div *ngIf="email.errors.pattern" class="text-danger font-weight-bold">
+                                        Vui lòng nhập đúng định dạng email
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon1">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <input type="tel" placeholder="Phone number" ngModel name="SoDienThoai"
+                                    #sodienthoai='ngModel' required pattern="(03|07|08|09|01[2|6|8|9])+([0-9]{8})\b">
+                                <div *ngIf="sodienthoai.errors && (sodienthoai.dirty || sodienthoai.touched)">
+                                    <div *ngIf="sodienthoai.errors.required" class="text-danger font-weight-bold">
+                                        Vui lòng nhập vào số điện thoại
+                                    </div>
+                                    <div *ngIf="sodienthoai.errors.pattern" class="text-danger font-weight-bold">
+                                        Vui lòng nhập đúng định dạng số điện thoại
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom d-flex justify-right">
+                                <button type="button" data-dismiss="modal" [disabled]="formDangKy.invalid"
+                                    (click)="DangKy(formDangKy.value)">ĐĂNG KÝ</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
